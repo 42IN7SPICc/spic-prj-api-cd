@@ -3,6 +3,7 @@
 
 #include "UIObject.hpp"
 #include "Color.hpp"
+#include "BitmaskEnumerator.hpp"
 #include <string>
 
 namespace spic {
@@ -14,6 +15,14 @@ namespace spic {
         left,
         center,
         right
+    };
+
+    enum class Style {
+        normal = 1 << 0,
+        bold = 1 << 1,
+        italic = 1 << 2,
+        underline = 1 << 4,
+        strikethrough = 1 << 8
     };
 
     /**
@@ -106,14 +115,22 @@ namespace spic {
              */
             void TextColor(const Color& color);
 
+            void FontStyle(bitmask<Style> newStyles);
+
+            const bitmask<Style>& FontStyle() const;
+
         private:
             std::string text;
             std::string font;
             int size;
             Alignment alignment;
             Color color;
+            bitmask<Style> styles;
     };
 
 }
+
+// Enable bitmask tricks for the Style enumeration
+enableEnumClassBitmask(spic::Style);
 
 #endif // TEXT_H_
