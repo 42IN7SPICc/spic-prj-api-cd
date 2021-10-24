@@ -21,8 +21,8 @@ namespace spic {
         normal = 1 << 0,
         bold = 1 << 1,
         italic = 1 << 2,
-        underline = 1 << 4,
-        strikethrough = 1 << 8
+        underline = 1 << 3,
+        strikethrough = 1 << 4
     };
 
     /**
