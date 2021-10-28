@@ -171,7 +171,7 @@ namespace spic {
              * @brief Returns whether this game object is itself active.
              * @return true if active, false if not.
              */
-            bool IsActiveSelf() const { return active; }
+            bool Active() const;
 
             /**
              * @brief Returns whether this game component is active, taking its parents
