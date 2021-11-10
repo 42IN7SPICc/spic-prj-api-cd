@@ -30,17 +30,6 @@ namespace spic {
              * @param layer The layer for the game object.
              * @param width The width of the UI object.
              * @param height The height of the UI object.
-             * @sharedapi
-             */
-            Text(const std::string& name, const std::string& tag, int layer, double width, double height);
-            
-            /**
-             * @brief Constructor.
-             * @param name The name for the game object.
-             * @param tag The tag for the game object.
-             * @param layer The layer for the game object.
-             * @param width The width of the UI object.
-             * @param height The height of the UI object.
              * @param text The content of the Text object
              * @param font The font the Text object will use to render
              * @param size The size the font will be rendered at
