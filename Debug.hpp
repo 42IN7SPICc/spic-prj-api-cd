@@ -5,13 +5,14 @@
 #include "Color.hpp"
 #include <string>
 
-namespace spic {
-
+namespace spic
+{
     /**
      * @brief Some convenient debugging functions.
+     * @spicapi
      */
-    namespace Debug {
-
+    namespace Debug
+    {
         /**
          * @brief Draws a colored line between specified start and end points.
          * @param start The starting point.
@@ -26,24 +27,22 @@ namespace spic {
          * @param message The message to write.
          * @spicapi
          */
-        void Log(const std::string& message);
+        void Log(const std::string& message, const std::string& caller = __builtin_FUNCTION(), const std::string& file = __builtin_FILE(), int line = __builtin_LINE());
 
         /**
          * @brief A variant of Debug.Log that logs an error message to the console.
          * @param message The message to write.
          * @spicapi
          */
-        void LogError(const std::string& error);
+        void LogError(const std::string& error, const std::string& caller = __builtin_FUNCTION(), const std::string& file = __builtin_FILE(), int line = __builtin_LINE());
 
         /**
          * @brief A variant of Debug.Log that logs a warning message to the console.
          * @param message The message to write.
          * @spicapi
          */
-        void LogWarning(const std::string& warning);
-
+        void LogWarning(const std::string& warning, const std::string& caller = __builtin_FUNCTION(), const std::string& file = __builtin_FILE(), int line = __builtin_LINE());
     }
-
 }
 
 #endif // DEBUG_H_

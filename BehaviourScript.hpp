@@ -4,10 +4,22 @@
 #include "Component.hpp"
 #include "Collider.hpp"
 
-namespace spic {
+#if __has_include("BehaviourScript_includes.hpp")
+#include "BehaviourScript_includes.hpp"
+#endif
 
+namespace spic {
+    /**
+     * @brief Base class for script running in the game.
+     */
     class BehaviourScript : public Component {
         public:
+            /**
+             * @brief constructor for BehaviourScript
+             * @sharedapi
+             */
+            BehaviourScript();
+
             /**
              * @brief TODO
              * @spicapi
@@ -40,6 +52,25 @@ namespace spic {
              * @spicapi
              */
             virtual void OnTriggerStay2D(const Collider& collider);
+
+            /**
+             * @brief Whether the script has been started.
+             * @param started desired value
+             * @sharedapi
+             */
+            void Started(bool started);
+
+            /**
+             * @brief Whether the script has been started.
+             * @return current value
+             * @sharedapi
+             */
+            bool Started() const;
+
+        private:
+#if __has_include("BehaviourScript_private.hpp")
+#include "BehaviourScript_private.hpp"
+#endif
     };
 
 }
